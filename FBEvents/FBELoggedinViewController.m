@@ -88,7 +88,7 @@
                                               
                                                NSNumber *timezone = [[[result objectForKey:@"data"] objectAtIndex:0] objectForKey:@"timezone"];
                                                self.tzone=timezone;
-                                               // NSLog(@"timezone: %@", self.tzone);
+                                                NSLog(@"timezone: %@", self.tzone);
                                                
                                            }
                                        }];
@@ -287,7 +287,7 @@
                                                     objectAtIndex:1]
                                                    objectForKey:@"fql_result_set"];
                                       
-                                       //NSLog(@"Result: %@", friendInfo);
+                                       NSLog(@"Result: %@", friendInfo);
                                       //[self showFriends:friendInfo];
                                       
                                       NSMutableArray* data2=[friendInfo mutableCopy ];
@@ -302,11 +302,7 @@
                                       NSArray* data4= [data2 sortedArrayUsingDescriptors:data3];
                                       FBEEventsViewController * event=(FBEEventsViewController *)segue.destinationViewController;
                                       event.data=data4;
-                                      //NSLog(@"Initial: %@",data4);
-                                      if(data4.count==0)
-                                      {
-                                      //NSLog(@"count: %u",data4.count);
-                                      }
+                                      NSLog(@"Initial: %@",data4);
                                       
                                       
                                   }
@@ -320,7 +316,7 @@
         //NSLog(@"Prepared");
         NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
         
-       // NSLog(@"Current Date is: %@", [[NSDate date] description]);
+        NSLog(@"Current Date is: %@", [[NSDate date] description]);
 
 
         int timeStampObj = (int)timeStamp;
@@ -487,7 +483,7 @@
         
         query = [query stringByAppendingFormat:@"'friendinfo':'SELECT eid,name, description,pic_square,pic_big, start_time, location, venue FROM event WHERE eid IN (SELECT eid FROM #friends)',}"];
         
-       // NSLog(@"%@", query);
+        NSLog(@"%@", query);
         
         
         // Set up the query parameter
@@ -612,7 +608,7 @@
         
         query = [query stringByAppendingFormat:@"'friendinfo':'SELECT eid,name,description, pic_square,pic_big, start_time, location, venue FROM event WHERE eid IN (SELECT eid FROM #friends)',}"];
         
-        //NSLog(@"%@", query);
+        NSLog(@"%@", query);
         
         
         // Set up the query parameter
