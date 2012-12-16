@@ -59,6 +59,19 @@
 {
     if (_data != data) {
         _data = data;
+        
+        if(_data.count==0)
+        {
+            UILabel *textView =[[UILabel alloc]init];
+            textView.frame=CGRectMake(20,100,280,40);
+            [textView setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
+            [textView setTextColor:[UIColor whiteColor]];
+            [textView setTextAlignment:NSTextAlignmentCenter];
+            [textView setBackgroundColor:[UIColor clearColor]];
+            [self.view addSubview:textView];
+            textView.text=@"No Events Found! :(";
+             [self.spinner stopAnimating];
+        }
     }
 
    // __block NSMutableArray* newdata=[[NSMutableArray alloc]init];
@@ -219,6 +232,8 @@
     [self.view addSubview:self.spinner];
     
     [self.spinner startAnimating];
+
+   
     
     
    // UIActivityIndicatorView *activity
@@ -294,6 +309,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
+    
     return [self.data count];
 }
 
@@ -337,6 +353,8 @@
 //                             objectForKey:@"pic_big"]]]];
     
     //cell.eventImage.image = image;
+    
+ 
     
         cell.eventTitle.text = [[self.data objectAtIndex:indexPath.row]
                               objectForKey:@"name"];
@@ -396,7 +414,16 @@
 //    {
 //        $latitude=null;
 //    }
-   
+//    if ([self data ]  == nil)    {
+//        NSLog(@"count is 0");
+//        NSLog(@"Count:%u",[self.data count]);
+        //NSLog(@"data:%@",self.data);
+        //[self.spinner stopAnimating];
+        //cell.eventTitle.text=@"No Events Found";
+        //[self.spinner stopAnimating];
+   //}
+    
+
         [self.spinner stopAnimating];
     //self.spinner.hidden=YES;
     

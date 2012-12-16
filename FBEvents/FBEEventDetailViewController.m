@@ -130,8 +130,13 @@
                                for (int i=0; i<=count2-1; ++i)
                                {
                                   //int i=0;
-                                   UIImageView *animationView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+8,250,57,57)];
-                                    // UIImageView *pinView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+35,240,15, 20)];
+                                   UIImageView *animationView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+8,240,57,57)];
+                                   UILabel *friendsName=[[UILabel alloc]initWithFrame:CGRectMake(0+(78*i)+8,293,57, 20)];
+                                   
+                                   [friendsName setFont:[UIFont fontWithName:@"Helvetica Neue" size:10]];
+                                   [friendsName setTextColor:[UIColor whiteColor]];
+                                   [friendsName setTextAlignment:NSTextAlignmentCenter];
+                                   [friendsName setBackgroundColor:[UIColor clearColor]];
 
                                    
                                    UIImage *image = [UIImage imageWithData:
@@ -141,9 +146,10 @@
                                                        [[friendInfo objectAtIndex:i]
                                                         objectForKey:@"pic_big"]]]];
                                    animationView.image=image;
-                                   //pinView.image=[UIImage imageNamed:@"pushpin.png"];
+                                   friendsName.text=[[friendInfo objectAtIndex:i]
+                               objectForKey:@"name"];
                                    [self.view addSubview:animationView];
-                                   //[self.view addSubview:pinView];
+                                   [self.view addSubview:friendsName];
 
 
                                    
@@ -198,13 +204,24 @@
                                   //int count2=(5,count);
                                   //                                NSMutableArray *images = [[NSMutableArray alloc] init];
                                   //                                UIImageView *animationView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0,70, 66)];
+                                  
+                                  //UIScrollView* scrollview =[[UIScrollView alloc] initWithFrame:CGRectMake(6,320,1000, 57)];
+                                  
+                                  
+                               //[self.view addSubview:scrollview];
+                                 
                                   if (count2>0)
                                   {
                                       for (int i=0; i<=count2-1; ++i)
                                       {
                                           //int i=0;
-                                          UIImageView *animationView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+8,320,57, 57)];
-                                          // UIImageView *pinView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+35,240,15, 20)];
+                                          UIImageView *animationView=[[UIImageView alloc]initWithFrame:CGRectMake(0+(78*i)+8,340,57, 57)];
+                                          UILabel *friendsName=[[UILabel alloc]initWithFrame:CGRectMake(0+(78*i)+8,393,57, 20)];
+                                          
+                                          [friendsName setFont:[UIFont fontWithName:@"Helvetica Neue" size:10]];
+                                          [friendsName setTextColor:[UIColor whiteColor]];
+                                          [friendsName setTextAlignment:NSTextAlignmentCenter];
+                                          [friendsName setBackgroundColor:[UIColor clearColor]];
                                           
                                           
                                           UIImage *image = [UIImage imageWithData:
@@ -214,15 +231,18 @@
                                                               [[friendInfo objectAtIndex:i]
                                                                objectForKey:@"pic_big"]]]];
                                           animationView.image=image;
-                                          //pinView.image=[UIImage imageNamed:@"pushpin.png"];
+                                          friendsName.text=[[friendInfo objectAtIndex:i]
+                                                            objectForKey:@"name"];
                                           [self.view addSubview:animationView];
-                                          //[self.view addSubview:pinView];
+                                          [self.view addSubview:friendsName];
+
                                           
                                           
                                           
                                           // ;
                                           
                                       }
+                                      //[self.view addSubview:scrollview];
                                       
                                       // NSLog(@"%@",images);
                                       
